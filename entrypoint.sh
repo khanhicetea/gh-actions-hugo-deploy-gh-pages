@@ -1,10 +1,10 @@
 #!/bin/sh
-echo 'Update all submodules'
+echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
-echo 'Build site'
+echo '=================== Build site ==================='
 HUGO_ENV=production hugo -v -d dist
-echo 'Publish to GitHub Pages'
+echo '=================== Publish to GitHub Pages ==================='
 cd dist
 remote_repo="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
 remote_branch="gh-pages" && \
@@ -17,4 +17,4 @@ git commit -m'action build' > /dev/null 2>&1 && \
 git push --force $remote_repo master:$remote_branch > /dev/null 2>&1 && \
 rm -fr .git && \
 cd ../
-echo 'Done.'
+echo '=================== Done  ==================='
