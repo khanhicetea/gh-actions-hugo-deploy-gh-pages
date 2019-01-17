@@ -28,6 +28,10 @@ action "hugo-deploy-gh-pages" {
 }
 ```
 
+## Example site
+
+- https://github.com/khanhicetea/.com
+
 ## LICENSE
 
 Copyright (c) 2019
