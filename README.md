@@ -14,7 +14,7 @@ NOTHING
 
 ## Example
 
-This example builds Hugo site
+**main.workflow**
 
 ```hcl
 workflow "Deploy to GitHub Pages" {
