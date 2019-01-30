@@ -3,6 +3,7 @@ echo '=================== Create deploy key to push ==================='
 mkdir ~/.ssh
 echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
+stat ~/.ssh/id_rsa
 echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
@@ -21,7 +22,7 @@ git add . && \
 echo -n 'Files to Commit:' && ls -l | wc -l && \
 timestamp=$(date +%s%3N) && \
 git commit -m "Automated deployment to GitHub Pages on $timestamp" > /dev/null 2>&1 && \
-git push deploy $remote_branch --force > /dev/null 2>&1 && \
+git push deploy $remote_branch --force --verbose > /dev/null 2>&1 && \
 rm -fr .git && \
 cd ../
 echo '=================== Done  ==================='
