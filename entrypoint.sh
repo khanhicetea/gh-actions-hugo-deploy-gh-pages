@@ -1,7 +1,7 @@
 #!/bin/sh
 echo '=================== Create deploy key to push ==================='
 mkdir ~/.ssh
-echo `echo ${GIT_DEPLOY_KEY} | base64 --decode` > ~/.ssh/id_rsa
+echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
 echo '=================== Update all submodules ==================='
 git submodule init
