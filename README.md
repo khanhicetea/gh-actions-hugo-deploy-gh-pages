@@ -10,7 +10,7 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 ## Environment Variables
 
-NOTHING
+- `GIT_EMAIL` : **(SECRET)** your Github verified email, [this will trigger gh-pages build](https://help.github.com/articles/generic-jekyll-build-failures/#unverified-email-address)
 
 ## Example
 
@@ -24,7 +24,10 @@ workflow "Deploy to GitHub Pages" {
 
 action "hugo-deploy-gh-pages" {
   uses = "khanhicetea/gh-actions-hugo-deploy-gh-pages@master"
-  secrets = ["GITHUB_TOKEN"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "GIT_EMAIL",
+  ]
 }
 ```
 
