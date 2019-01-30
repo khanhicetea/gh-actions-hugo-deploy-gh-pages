@@ -1,4 +1,8 @@
 #!/bin/sh
+echo '=================== Create deploy key to push ==================='
+mkdir ~/.ssh
+echo `echo ${GIT_DEPLOY_KEY} | base64 --decode` > ~/.ssh/id_rsa
+chmod 400 ~/.ssh/id_rsa
 echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
@@ -6,7 +10,7 @@ echo '=================== Build site ==================='
 HUGO_ENV=production hugo -v -d dist
 echo '=================== Publish to GitHub Pages ==================='
 cd dist
-remote_repo="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
+remote_repo="git@github.com:${GITHUB_REPOSITORY}.git" && \
 remote_branch="gh-pages" && \
 git init && \
 git remote add deploy $remote_repo && \
