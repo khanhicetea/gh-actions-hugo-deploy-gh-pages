@@ -1,6 +1,7 @@
 #!/bin/sh
 echo '=================== Create deploy key to push ==================='
 mkdir ~/.ssh
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 cat ~/.ssh/known_hosts
 ssh -T git@github.com
