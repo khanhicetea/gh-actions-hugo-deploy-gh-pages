@@ -1,7 +1,7 @@
 #!/bin/sh
 echo '=================== Create deploy key to push ==================='
 mkdir ~/.ssh
-ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 cat ~/.ssh/known_hosts
 ssh -T git@github.com
 echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
