@@ -7,10 +7,11 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 ## Secrets
 
 - `GITHUB_TOKEN` - *Required* for pushing files to gh-pages branch.
+- `GIT_EMAIL` : *Required* your Github verified email, [this will trigger gh-pages build](https://help.github.com/articles/generic-jekyll-build-failures/#unverified-email-address). I put it in secret because of hiding your real identity from public access.
 
 ## Environment Variables
 
-- `GIT_EMAIL` : **(SECRET)** your Github verified email, [this will trigger gh-pages build](https://help.github.com/articles/generic-jekyll-build-failures/#unverified-email-address)
+Nothing
 
 ## Example
 
