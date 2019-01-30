@@ -4,6 +4,7 @@ mkdir ~/.ssh
 echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
 stat ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
 echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
