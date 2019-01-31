@@ -4,9 +4,9 @@ mkdir ~/.ssh
 # echo -e "StrictHostKeyChecking no" > ~/.ssh/config
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 cat ~/.ssh/known_hosts
+echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
+chmod 400 ~/.ssh/id_rsa
 ssh -T -v git@github.com
-# echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
-# chmod 400 ~/.ssh/id_rsa
 # echo '=================== Update all submodules ==================='
 # git submodule init
 # git submodule update --recursive --remote
