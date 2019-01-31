@@ -1,11 +1,11 @@
 #!/bin/sh
 echo '=================== Create deploy key to push ==================='
-mkdir ~/.ssh
+mkdir /root/.ssh
 # echo -e "StrictHostKeyChecking no" > ~/.ssh/config
-ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
-cat ~/.ssh/known_hosts
-echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > ~/.ssh/id_rsa
-chmod 400 ~/.ssh/id_rsa
+ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
+cat /root/.ssh/known_hosts
+echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > /root/.ssh/id_rsa
+chmod 400 /root/.ssh/id_rsa
 ssh -T -v git@github.com
 # echo '=================== Update all submodules ==================='
 # git submodule init
