@@ -22,7 +22,7 @@ git add . && \
 echo -n 'Files to Commit:' && ls -l | wc -l && \
 timestamp=$(date +%s%3N) && \
 git commit -m "Automated deployment to GitHub Pages on $timestamp" > /dev/null 2>&1 && \
-git push deploy $remote_branch --force && \
+git push deploy $remote_branch --force > /dev/null 2>&1 && \
 rm -fr .git && \
 cd ../
 echo '=================== Done  ==================='
