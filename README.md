@@ -6,8 +6,18 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 ## Secrets
 
-- `GITHUB_TOKEN` - *Required* for pushing files to gh-pages branch.
-- `GIT_EMAIL` : *Required* your Github verified email, [this will trigger gh-pages build](https://help.github.com/articles/generic-jekyll-build-failures/#unverified-email-address). I put it in secret because of hiding your real identity from public access.
+- `GIT_DEPLOY_KEY` - *Required* your deploy key which has **Write access**
+
+## Create Deploy Key
+
+1. Generate deploy key
+```bash
+$ ssh-keygen -t rsa -f hugo -q -N ""
+```
+
+1. Then go to "Settings > Deploy Keys" of repository
+1. Add your public key within "Allow write access" option.
+1. Copy your private deploy key to `GIT_DEPLOY_KEY` secret in "Settings > Secrets"
 
 ## Environment Variables
 
@@ -26,8 +36,7 @@ workflow "Deploy to GitHub Pages" {
 action "hugo-deploy-gh-pages" {
   uses = "khanhicetea/gh-actions-hugo-deploy-gh-pages@master"
   secrets = [
-    "GITHUB_TOKEN",
-    "GIT_EMAIL",
+    "GIT_DEPLOY_KEY"
   ]
 }
 ```
