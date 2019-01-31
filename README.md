@@ -10,11 +10,7 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 ## Create Deploy Key
 
-1. Generate deploy key
-```bash
-$ ssh-keygen -t rsa -f hugo -q -N ""
-```
-
+1. Generate deploy key `ssh-keygen -t rsa -f hugo -q -N ""`
 1. Then go to "Settings > Deploy Keys" of repository
 1. Add your public key within "Allow write access" option.
 1. Copy your private deploy key to `GIT_DEPLOY_KEY` secret in "Settings > Secrets"
