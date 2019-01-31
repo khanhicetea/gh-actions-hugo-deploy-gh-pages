@@ -5,6 +5,7 @@ mkdir /root/.ssh
 ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
 cat /root/.ssh/known_hosts
 echo `echo ${GIT_DEPLOY_KEY} | base64 -d` > /root/.ssh/id_rsa
+sha256sum /root/.ssh/id_rsa
 chmod 400 /root/.ssh/id_rsa
 ssh -T -v git@github.com
 # echo '=================== Update all submodules ==================='
