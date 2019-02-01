@@ -41,6 +41,10 @@ action "hugo-deploy-gh-pages" {
 
 - https://github.com/khanhicetea/.com
 
+## Other actions
+
+- RPC Ping (Ping Search Engine) : https://github.com/khanhicetea/gh-actions-rpc-ping
+
 ## LICENSE
 
 Copyright (c) 2019
