@@ -8,7 +8,7 @@ echo '=================== Update all submodules ==================='
 git submodule init
 git submodule update --recursive --remote
 echo '=================== Build site ==================='
-HUGO_ENV=production /usr/local/bin/hugo -v --minify -d dist
+HUGO_ENV=production hugo -v --minify -d dist
 echo '=================== Publish to GitHub Pages ==================='
 cd dist
 remote_repo="git@github.com:${GITHUB_REPOSITORY}.git" && \
