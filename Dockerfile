@@ -24,7 +24,9 @@ RUN wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/
     rm /tmp/* &&\
     apk add --no-cache \
         git \
-        openssh-client
+        openssh-client \
+        libc6-compat \
+        libstdc++
 
 COPY entrypoint.sh /entrypoint.sh
 
