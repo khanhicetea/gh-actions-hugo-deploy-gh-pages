@@ -17,7 +17,7 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 ## Environment Variables
 
-Nothing
+- `HUGO_VERSION` : **optional**, default is **0.54.0** - [check all versions here](https://github.com/gohugoio/hugo/releases)
 
 ## Example
 
@@ -34,6 +34,9 @@ action "hugo-deploy-gh-pages" {
   secrets = [
     "GIT_DEPLOY_KEY"
   ]
+  env = {
+    HUGO_VERSION = "0.53"
+  }
 }
 ```
 
