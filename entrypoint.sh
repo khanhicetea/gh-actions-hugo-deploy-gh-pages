@@ -2,9 +2,9 @@
 echo '=================== Install Hugo ==================='
 DOWNLOAD_HUGO_VERSION=${HUGO_VERSION:-0.54.0}
 echo "Installing Hugo $DOWNLOAD_HUGO_VERSION"
-wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${DOWNLOAD_HUGO_VERSION}/hugo_extended_${DOWNLOAD_HUGO_VERSION}_Linux-64bit.tar.gz
-tar -zxf /tmp/hugo.tar.gz -C /tmp
-mv /tmp/hugo /usr/local/bin/hugo
+wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${DOWNLOAD_HUGO_VERSION}/hugo_extended_${DOWNLOAD_HUGO_VERSION}_Linux-64bit.tar.gz &&\
+tar -zxf /tmp/hugo.tar.gz -C /tmp &&\
+mv /tmp/hugo /usr/local/bin/hugo &&\
 rm /tmp/*
 echo '=================== Create deploy key to push ==================='
 mkdir /root/.ssh
