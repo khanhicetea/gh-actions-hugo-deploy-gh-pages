@@ -16,7 +16,7 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-ENV HUGO_VERSION 0.54
+ENV HUGO_VERSION 0.54.0
 
 RUN wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz &&\
     tar -zxf /tmp/hugo.tar.gz -C /tmp &&\
