@@ -22,7 +22,7 @@ RUN wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/
     tar -zxf /tmp/hugo.tar.gz -C /tmp &&\
     mv /tmp/hugo /usr/local/bin/hugo &&\
     rm /tmp/* &&\
-    apk add --no-cache --no-document \
+    apk add --no-cache \
         git \
         openssh-client
 
