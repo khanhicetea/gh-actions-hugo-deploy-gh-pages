@@ -27,3 +27,5 @@ RUN wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/
         openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
