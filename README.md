@@ -21,7 +21,24 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 ## Example
 
-**main.workflow**
+**push.yml** (New syntax)
+
+```yaml
+on: push
+name: Deploy to GitHub Pages
+jobs:
+  hugo-deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: hugo-deploy-gh-pages
+      uses: khanhicetea/gh-actions-hugo-deploy-gh-pages@master
+      env:
+        GIT_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
+        HUGO_VERSION: "0.53"
+```
+
+**main.workflow** (Old syntax - deprecated)
 
 ```hcl
 workflow "Deploy to GitHub Pages" {
