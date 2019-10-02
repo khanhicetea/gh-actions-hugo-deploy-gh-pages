@@ -1,7 +1,7 @@
 #!/bin/sh
 echo '=================== Install Hugo ==================='
 DOWNLOAD_HUGO_VERSION=${HUGO_VERSION:-0.54.0}
-GITHUB_DEPLOY_REPOSITORY=${GITHUB_REMOTE_REPOSITORY:-GITHUB_REPOSITORY}
+GITHUB_DEPLOY_REPOSITORY=${GITHUB_REMOTE_REPOSITORY:-$GITHUB_REPOSITORY}
 GITHUB_DEPLOY_BRANCH=${GITHUB_BRANCH:-"gh-pages"}
 echo "Installing Hugo $DOWNLOAD_HUGO_VERSION"
 wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${DOWNLOAD_HUGO_VERSION}/hugo_extended_${DOWNLOAD_HUGO_VERSION}_Linux-64bit.tar.gz &&\
