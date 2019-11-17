@@ -28,7 +28,7 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 **push.yml** (New syntax)
 
-**Deploy to gp-pages branch**: (under same repo)
+**Deploy to gh-pages branch**: (under same repo)
 
 ```yaml
 name: Deploy to GitHub Pages
