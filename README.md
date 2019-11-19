@@ -30,6 +30,8 @@ Inspired by [BryanSchuetz/jekyll-deploy-gh-pages](https://github.com/BryanSchuet
 
 **Deploy to gh-pages branch**: (under same repo)
 
+- Note: put the `CNAME` file within your domain name inside `static` folder of compiling branch (master)
+
 ```yaml
 name: Deploy to GitHub Pages
 
