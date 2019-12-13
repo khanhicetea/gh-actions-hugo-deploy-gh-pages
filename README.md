@@ -96,10 +96,6 @@ action "hugo-deploy-gh-pages" {
 }
 ```
 
-## Example site
-
-- https://github.com/khanhicetea/.com
-
 ## Other actions
 
 - RPC Ping (Ping Search Engine) : https://github.com/khanhicetea/gh-actions-rpc-ping
